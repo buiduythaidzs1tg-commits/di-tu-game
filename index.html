@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>ĐI TÙ</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style2.css">
+</head><body>
+<div id="game">
+<div id="hud">
+<div class="title">🚔 ĐI TÙ 🚔</div>
+<div class="bar"><div id="wantedFill"></div><span id="wantedText">Mức truy nã 0%</span></div>
+<div class="bar" id="bailBar" style="display:none"><div id="bailFill"></div><span id="bailText"></span></div>
+<div id="status">Đang tự do 😎</div>
+</div>
+<div id="test">
+<button onclick="onEvent({type:'like',user:'Test',count:30})">+30 tim</button>
+<button onclick="onEvent({type:'chat',user:'Test',text:'tù'})">Chat tù</button>
+<button onclick="onEvent({type:'gift',user:'Test',giftName:'Rose',diamonds:1})">Quà 1💎</button>
+<button onclick="onEvent({type:'gift',user:'Test',giftName:'Panda',diamonds:5})">Quà 5💎</button>
+<button onclick="onEvent({type:'gift',user:'Test',giftName:'Lion',diamonds:500})">Quà 500💎</button>
+<button onclick="goJail('Test')">Bắt vào tù</button>
+</div>
+<div id="board"><h3>🏆 Top</h3><ol id="top"></ol></div>
+<div id="timer"></div>
+<div id="stage"><div id="cop">👮</div><div id="cell">
+<div id="prisoner" class="free">🤡</div>
+<div id="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div id="nameTag"></div></div></div>
+<div id="floor"></div>
+<div id="log"></div>
+<div id="rules"><b>Luật chơi</b><br>
+❤️ Thả tim: tăng truy nã<br>
+💬 Chat tù/bắt: +2%<br>
+🎁 Quà nhỏ: giảm 5s án<br>
+🎁 Từ 10💎: giảm 2s/💎<br>
+🎁 Từ 500💎: bảo lãnh ngay<br>
+Truy nã 100% = vào tù!</div>
+<button id="helpBtn" onclick="$('rules').classList.toggle('show')">?</button>
+<div id="conn">Đang kết nối...</div>
+<div id="flash"></div>
+</div>
+<script src="game1.js"></script>
+<script src="game2.js"></script>
+</body></html>
