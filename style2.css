@@ -1,1 +1,18 @@
-
+#timer{position:absolute;top:36%;left:0;right:0;text-align:center;font-size:48px;font-weight:900;text-shadow:0 4px 0 #000;display:none;z-index:15}
+#cop{position:absolute;bottom:22%;font-size:64px;right:-120px;transition:right 1s}
+#cop.in{right:4%}
+#board{position:absolute;bottom:22%;right:6px;width:150px;background:#0009;border-radius:12px;padding:6px 8px;z-index:20;font-size:12px}
+#board h3{font-size:14px;margin-bottom:4px;color:#ffd000}
+#board li{list-style:none;display:flex;justify-content:space-between;padding:2px 0}
+#log{position:absolute;left:10px;bottom:calc(8px + env(safe-area-inset-bottom));width:62%;max-height:20%;overflow:hidden;z-index:20;display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
+#log div{background:#000a;padding:3px 8px;border-radius:10px;font-size:13px;width:fit-content;max-width:100%}
+#rules{display:none;position:absolute;right:6px;bottom:56px;width:220px;font-size:12px;background:#000c;border-radius:10px;padding:8px 10px;z-index:60;line-height:1.5}
+#rules.show{display:block}
+#helpBtn{position:absolute;right:10px;bottom:12px;z-index:45;width:36px;height:36px;border-radius:50%;border:0;background:#000b;color:#fff;font-size:18px;font-weight:800}
+#flash{position:absolute;inset:0;pointer-events:none;z-index:30;opacity:0}
+#flash.siren{animation:siren .5s 6}
+@keyframes siren{0%{background:#f005;opacity:1}50%{background:#04f5;opacity:1}100%{background:#f005;opacity:1}}
+#conn{position:absolute;top:2px;left:50%;transform:translateX(-50%);font-size:11px;background:#000a;padding:2px 10px;border-radius:10px;z-index:50;white-space:nowrap}
+#test{position:absolute;bottom:22%;left:6px;z-index:40;display:flex;flex-wrap:wrap;gap:4px;width:62%}
+#test button{padding:8px 10px;font-size:13px;border:0;border-radius:6px;opacity:.75}
+body.hideTest #test{display:none}
