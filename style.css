@@ -1,1 +1,24 @@
-
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{position:fixed;inset:0;overflow:hidden;overscroll-behavior:none;touch-action:manipulation;-webkit-user-select:none;user-select:none;font-family:Arial,sans-serif;color:#fff;background:#1b1f2a}
+#game{position:relative;width:100%;height:100%;background:linear-gradient(#2b3350,#151826 70%)}
+#hud{position:absolute;top:10px;left:10px;right:10px;z-index:20;padding-top:env(safe-area-inset-top)}
+.title{text-align:center;font-weight:900;font-size:24px;letter-spacing:2px;text-shadow:0 2px 0 #000}
+.bar{height:24px;background:#0008;border:2px solid #fff3;border-radius:14px;overflow:hidden;margin-top:8px;position:relative}
+.bar>div{height:100%;width:0;transition:width .3s}
+#wantedFill{background:linear-gradient(90deg,#ffd000,#ff3b30)}
+#bailFill{background:linear-gradient(90deg,#34c759,#00e0b0)}
+.bar span{position:absolute;inset:0;text-align:center;line-height:20px;font-size:13px;font-weight:700;text-shadow:0 1px 2px #000}
+#status{text-align:center;margin-top:8px;font-size:18px;font-weight:800}
+#stage{position:absolute;left:0;right:0;bottom:22%;height:40%;display:flex;justify-content:center;align-items:flex-end}
+#floor{position:absolute;left:0;right:0;bottom:0;height:20%;background:#0c0e16;border-top:4px solid #444}
+#cell{position:relative;width:190px;height:100%}
+#prisoner{position:absolute;left:50%;bottom:0;transform:translateX(-50%);font-size:90px;filter:drop-shadow(0 6px 4px #0008)}
+#prisoner.free{animation:dance .8s infinite alternate}
+#prisoner.jail{filter:grayscale(.6);animation:sad 1.2s infinite alternate}
+@keyframes dance{from{transform:translateX(-50%) rotate(-8deg)}to{transform:translateX(-50%) rotate(8deg) translateY(-12px)}}
+@keyframes sad{from{transform:translateX(-50%)}to{transform:translateX(-50%) translateY(4px)}}
+#bars{position:absolute;inset:0;display:flex;justify-content:space-around;opacity:0;transform:translateY(-120%);transition:transform .5s cubic-bezier(.3,1.6,.5,1),opacity .2s;pointer-events:none}
+#bars i{width:12px;height:100%;background:linear-gradient(90deg,#666,#ddd,#666);border-radius:6px;box-shadow:0 0 8px #000}
+#bars.down{opacity:1;transform:none}
+#bars::before{content:'';position:absolute;top:0;left:-10px;right:-10px;height:14px;background:#555;border-radius:6px}
+#nameTag{position:absolute;bottom:-34px;left:0;right:0;text-align:center;font-weight:800;font-size:18px}
